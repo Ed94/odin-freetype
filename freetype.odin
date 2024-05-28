@@ -3,12 +3,12 @@ package freetype
 import "core:c"
 
 when ODIN_OS == .Windows {
-    when ODIN_DEBUG {
-        foreign import freetype "../debug/freetype.lib"
-    }
-    else {
-        foreign import freetype "../release/freetype.lib"
-    }
+    // when ODIN_DEBUG {
+    //     foreign import freetype "../binaries/debug/freetype.lib"
+    // }
+    // else {
+        foreign import freetype "../binaries/release/freetype.lib"
+    // }
 } else when ODIN_OS == .Linux {
     foreign import freetype "system:freetype"
 }
