@@ -9,7 +9,11 @@ when ODIN_OS == .Windows {
     // else {
         foreign import freetype "./binaries/release/freetype.lib"
     // }
-} else when ODIN_OS == .Linux {
+}
+else when ODIN_OS == .Darwin {
+	foreign import freetype "system:freetype"
+}
+else when ODIN_OS == .Linux {
     foreign import freetype "system:freetype"
 }
 
